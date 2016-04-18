@@ -20,3 +20,7 @@ This create a new menu item type a category template in accordion style
 ### modal mailto override
 This override displays an button which opens a bootstrap modal box with the mailto form  
 only works with plg_mvcoverride
+
+## 3 levels menu
+### mod_menu override
+This override allows Joomla/Bootstrap 3 to manage more than 2 menu levels  
