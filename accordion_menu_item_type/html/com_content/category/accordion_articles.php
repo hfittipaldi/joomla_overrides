@@ -69,9 +69,12 @@ if (!empty($this->items))
     <?php endif; ?>
 
     <div id="accordion" class="panel-group" role="tablist" aria-multiselectable="true">
-        <?php $first = $this->params->get('show_first_open'); ?>
-        <?php foreach ($this->items as $i => $article) : ?>
-        <?php $params = $article->params;
+        <?php $first = $this->params->get('show_first_open');
+        $data_parent = $this->params->get('collapse_all') == 1
+            ? ' data-parent="#accordion"'
+            : '';
+        foreach ($this->items as $i => $article) :
+            $params = $article->params;
             $in = '';
             $expanded = 'false';
 
@@ -84,7 +87,7 @@ if (!empty($this->items))
         <article class="panel panel-default">
             <header <?php echo $headerTitle; ?> class="panel-heading" role="tab" id="heading-<?php echo $i; ?>">
                 <h3 class="toggler panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-<?php echo $i; ?>" aria-expanded="<?php echo $expanded; ?>" aria-controls="collapse<?php echo $i; ?>"><?php echo $this->escape($article->title); ?></a>
+                    <a role="button" data-toggle="collapse"<?php echo $data_parent; ?> href="#collapse-<?php echo $i; ?>" aria-expanded="<?php echo $expanded; ?>" aria-controls="collapse<?php echo $i; ?>"><?php echo $this->escape($article->title); ?></a>
                 </h3>
             </header>
             <div id="collapse-<?php echo $i; ?>" class="panel-collapse collapse<?php echo $in; ?>" role="tabpanel" aria-labelledby="heading-<?php echo $i; ?>">
