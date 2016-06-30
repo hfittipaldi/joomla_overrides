@@ -95,7 +95,14 @@ if (!empty($this->items))
                     <?php echo JLayoutHelper::render('joomla.content.icons', array('params' => $params, 'item' => $article, 'print' => false)); ?>
                     <?php endif; ?>
 
+                    <?php if ($article->fulltext != '') : ?>
+                        <?php if ($params->get('show_intro') == 1) : ?>
+                        <?php echo $article->introtext; ?>
+                        <?php endif; ?>
+                    <?php echo $article->fulltext; ?>
+                    <?php else : ?>
                     <?php echo $article->text; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </article>
