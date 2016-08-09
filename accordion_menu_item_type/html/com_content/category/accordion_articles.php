@@ -10,12 +10,7 @@
 defined('_JEXEC') or die;
 
 JHtml::addIncludePath(JPATH_COMPONENT . '/helpers/html');
-
-// Create some shortcuts.
-$params    = &$this->item->params;
-$n         = count($this->items);
-$listOrder = $this->escape($this->state->get('list.ordering'));
-$listDirn  = $this->escape($this->state->get('list.direction'));
+JHtml::addIncludePath(JPATH_BASE . '/templates/' . JFactory::getApplication()->getTemplate() . '/code/com_content/helpers');
 
 // Check for at least one editable article
 $isEditable = false;
@@ -102,7 +97,7 @@ if (!empty($this->items))
                         <?php if ($params->get('show_intro') == 1) : ?>
                         <?php echo $article->introtext; ?>
                         <?php endif; ?>
-                    <?php echo $article->fulltext; ?>
+                    <?php echo JHtml::_('content.prepare', $article->fulltext); ?>
                     <?php else : ?>
                     <?php echo $article->text; ?>
                     <?php endif; ?>
