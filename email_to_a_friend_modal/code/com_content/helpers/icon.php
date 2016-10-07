@@ -108,7 +108,7 @@ abstract class JHtmlIcon
         }
 
         $lang = JFactory::getLanguage();
-        $lang->load('com_mailto', JPATH_SITE, $article->language, true);
+        $lang->load('com_mailto', JPATH_SITE);
         $attribs['title']       = JText::_('COM_MAILTO_EMAIL_TO_A_FRIEND');
         $attribs['rel']         = 'nofollow';
         $attribs['class']       = 'hasTooltip';
