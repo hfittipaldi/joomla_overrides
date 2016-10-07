@@ -46,6 +46,7 @@ $canEdit = $displayData['params']->get('access-edit');
 </div>
 
 <?php
+// "Email this link to a friend" bootstrap modal
 $uri      = JUri::getInstance();
 $base     = $uri->toString(array('scheme', 'host', 'port'));
 $template = JFactory::getApplication()->getTemplate();
@@ -62,5 +63,3 @@ echo JHtml::_(
         'height' => '400px',
     )
 );
-?>
-
