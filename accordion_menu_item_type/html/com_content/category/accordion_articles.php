@@ -80,7 +80,7 @@ if (!empty($this->items))
             }
         ?>
         <article class="panel panel-default">
-            <header <?php echo $headerTitle; ?> class="panel-heading" role="tab" id="heading-<?php echo $i; ?>">
+            <header class="panel-heading" role="tab" id="heading-<?php echo $i; ?>">
                 <h3 class="toggler panel-title">
                     <a role="button" data-toggle="collapse"<?php echo $data_parent; ?> href="#collapse-<?php echo $i; ?>" aria-expanded="<?php echo $expanded; ?>" aria-controls="collapse<?php echo $i; ?>"><?php echo $this->escape($article->title); ?></a>
                 </h3>
